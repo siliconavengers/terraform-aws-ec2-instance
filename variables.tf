@@ -129,19 +129,19 @@ variable "cpu_credits" {
   default     = "standard"
 }
 
-variable "connection_type" {
-  description = "Connection type when provision"
-  default     = "ssh"
-}
+# variable "connection_type" {
+#   description = "Connection type when provision"
+#   default     = "ssh"
+# }
 
-variable "connection_user" {
-  description = "Connection user when provision"
-  default     = "ubuntu"
-}
+# variable "connection_user" {
+#   description = "Connection user when provision"
+#   default     = "ubuntu"
+# }
 
-variable "connection_private_key" {
-  description = "Connection private key when provision"
-}
+# variable "connection_private_key" {
+#   description = "Connection private key when provision"
+# }
 
 variable "availability_zone" {
   description = "Availability zone"
