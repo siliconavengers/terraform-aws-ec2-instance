@@ -142,3 +142,7 @@ variable "connection_user" {
 variable "connection_private_key" {
   description = "Connection private key when provision"
 }
+
+variable "availability_zone" {
+  description = "Availability zone"
+}
