@@ -54,6 +54,8 @@ resource "aws_instance" "this" {
       private_key = "${file(var.connection_private_key)}"
     }
   }
+
+  availability_zone = "${var.availability_zone}"
 }
 
 resource "aws_instance" "this_t2" {
@@ -109,4 +111,5 @@ resource "aws_instance" "this_t2" {
       private_key = "${file(var.connection_private_key)}"
     }
   }
+  availability_zone = "${var.availability_zone}"
 }
