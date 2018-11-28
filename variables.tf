@@ -128,3 +128,17 @@ variable "cpu_credits" {
   description = "The credit option for CPU usage (unlimited or standard)"
   default     = "standard"
 }
+
+variable "connection_type" {
+  description = "Connection type when provision"
+  default     = "ssh"
+}
+
+variable "connection_user" {
+  description = "Connection user when provision"
+  default     = "ubuntu"
+}
+
+variable "connection_private_key" {
+  description = "Connection private key when provision"
+}
