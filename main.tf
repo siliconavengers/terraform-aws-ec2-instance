@@ -6,7 +6,7 @@
 # Note: network_interface can't be specified together with associate_public_ip_address
 ######
 resource "aws_instance" "this" {
-  count = "${var.instance_count * (1 - local.is_t_instance_type)}"
+  count = "${var.instance_count}"
 
   ami                    = "${var.ami}"
   instance_type          = "${var.instance_type}"
