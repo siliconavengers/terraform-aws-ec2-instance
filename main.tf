@@ -42,6 +42,18 @@ resource "aws_instance" "this" {
     # we have to ignore changes in the following arguments
     ignore_changes = ["private_ip", "root_block_device", "ebs_block_device"]
   }
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'success!'",
+    ]
+
+    connection {
+      type        = "${var.connection_type}"
+      user        = "${var.connection_user}"
+      private_key = "${file(var.connection_private_key)}"
+    }
+  }
 }
 
 resource "aws_instance" "this_t2" {
@@ -84,5 +96,17 @@ resource "aws_instance" "this_t2" {
     # (eg, https://github.com/terraform-providers/terraform-provider-aws/issues/2036)
     # we have to ignore changes in the following arguments
     ignore_changes = ["private_ip", "root_block_device", "ebs_block_device"]
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'success!'",
+    ]
+
+    connection {
+      type        = "${var.connection_type}"
+      user        = "${var.connection_user}"
+      private_key = "${file(var.connection_private_key)}"
+    }
   }
 }
