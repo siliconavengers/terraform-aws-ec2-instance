@@ -43,17 +43,17 @@ resource "aws_instance" "this" {
     ignore_changes = ["private_ip", "root_block_device", "ebs_block_device"]
   }
 
-#   provisioner "remote-exec" {
-#     inline = [
-#       "echo 'success!'",
-#     ]
+  provisioner "remote-exec" {
+    inline = [
+      "echo 'success!'",
+    ]
 
-#     connection {
-#       type        = "${var.connection_type}"
-#       user        = "${var.connection_user}"
-#       private_key = "${var.connection_private_key}"
-#     }
-#   }
+    connection {
+      type        = "${var.connection_type}"
+      user        = "${var.connection_user}"
+      private_key = "${var.connection_private_key}"
+    }
+  }
 
   availability_zone = "${var.availability_zone}"
 }
