@@ -51,7 +51,7 @@ resource "aws_instance" "this" {
     connection {
       type        = "${var.connection_type}"
       user        = "${var.connection_user}"
-      private_key = "${file(var.connection_private_key)}"
+      private_key = "${var.connection_private_key}"
     }
   }
 
